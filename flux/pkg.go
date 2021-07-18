@@ -12,7 +12,7 @@ import (
 // The first two parameters influence output behavior: withstderr adds stderr output,
 // of the k3d invocation and verbose gives additional details. For example:
 //
-// K3D(false, false, "~/bin/kubectl", "get", "--namespace=foo", "pods", "--output=yaml")
+// K3D(false, false, "~/bin/flux", "boostrap", "--namespace=foo", "pods", "--output=yaml")
 func Flux(withstderr, verbose bool, fluxbin, cmd string, args ...string) (result string, err error) {
 	if fluxbin == "" {
 		bin, err := shellout(withstderr, false, "which", "flux")

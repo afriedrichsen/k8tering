@@ -12,7 +12,7 @@ import (
 // The first two parameters influence output behavior: withstderr adds stderr output,
 // of the k3d invocation and verbose gives additional details. For example:
 //
-// K3D(false, false, "~/bin/kubectl", "get", "--namespace=foo", "pods", "--output=yaml")
+// K3D(false, false, "~/bin/k3d", "create", "cluster", "--agents=2", "servers", "3")
 func K3D(withstderr, verbose bool, kubectlbin, cmd string, args ...string) (result string, err error) {
 	if kubectlbin == "" {
 		bin, err := shellout(withstderr, false, "which", "k3d")
